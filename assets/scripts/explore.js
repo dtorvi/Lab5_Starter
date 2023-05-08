@@ -6,16 +6,17 @@ var button = document.querySelector("button");
 var faceImage = document.querySelector("img");
 function init() {
   // TODO
+  speechSynthesis;
   populateVoiceList();
   window.speechSynthesis.addEventListener('voiceschanged', populateVoiceList);
   button.addEventListener('click', speak);
 }
 
 function populateVoiceList() {
-  voices = window.speechSynthesis.getVoices();
+  const voices = window.speechSynthesis.getVoices();
   console.log(voices.length);
   for (let i =0; i < voices.length; i++){
-    var option = document.createElement("option");
+    const option = document.createElement("option");
     option.textContent = `${voices[i].name} (${voices[i].lang})`;
 
     if (voices[i].default) {
@@ -29,9 +30,9 @@ function populateVoiceList() {
 }
 
 function speak(){
-  voices = window.speechSynthesis.getVoices();
-  choice = document.querySelector('#voice-select option:checked');
-  synth = window.speechSynthesis;
+  const voices = window.speechSynthesis.getVoices();
+  const choice = document.querySelector('#voice-select option:checked');
+  const synth = window.speechSynthesis;
   const utterThis = new SpeechSynthesisUtterance(inputTxt.value);
   for (let i =0; i <voices.length; i++){
     if (voices[i].name == choice){
