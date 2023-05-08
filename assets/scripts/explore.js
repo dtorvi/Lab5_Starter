@@ -6,6 +6,7 @@ var textInput = document.getElementById("text-to-speak");
 var voiceSelect = document.querySelector("#voice-select");
 var button = document.querySelector("button");
 var faceImage = document.querySelector("img");
+let voices = [];
 function init() {
   // TODO
   speechSynthesis;
@@ -32,11 +33,11 @@ function populateVoiceList() {
 
 function speak(){
   const voices = window.speechSynthesis.getVoices();
-  var choice = document.querySelector('#voice-select option:checked');
+  const choice = voiceSelect.selectedOptions[0].getAttribute("data-name");
   const synth = window.speechSynthesis;
   const utterThis = new SpeechSynthesisUtterance(textInput.value);
   for (let i =0; i <voices.length; i++){
-    if (voices[i].name === choice.textContent){
+    if (voices[i].name === choice){
       utterThis.voice = voices[i];
     }
   }
