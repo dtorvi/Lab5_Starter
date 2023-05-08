@@ -35,7 +35,7 @@ function speak(){
   const synth = window.speechSynthesis;
   const utterThis = new SpeechSynthesisUtterance(textInput.value);
   for (let i =0; i <voices.length; i++){
-    if (voices[i].name == choice.value){
+    if (voices[i].name === choice.textContent){
       utterThis.voice = voices[i];
     }
   }
