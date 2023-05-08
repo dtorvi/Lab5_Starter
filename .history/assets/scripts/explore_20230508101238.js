@@ -6,7 +6,6 @@ const button = document.querySelector("button");
 const faceImage = document.querySelector("img");
 function init() {
   // TODO
-  populateVoiceList();
   button.addEventListener('click', speak);
 }
 
@@ -36,14 +35,4 @@ function speak(){
       utterThis.voice = voices[i];
     }
   }
-  utterThis.addEventListener('start', () => {
-    const img = document.querySelector('img');
-    img.src = 'assets/images/smiling-open.png';
-  });
-  utterThis.addEventListener('end', () => {
-    const img = document.querySelector('img');
-    img.src = 'assets/images/smiling.png';
-  });
-
-  synth.speak(utterThis);
 }

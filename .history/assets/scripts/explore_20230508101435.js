@@ -6,7 +6,6 @@ const button = document.querySelector("button");
 const faceImage = document.querySelector("img");
 function init() {
   // TODO
-  populateVoiceList();
   button.addEventListener('click', speak);
 }
 

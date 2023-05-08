@@ -6,7 +6,6 @@ const button = document.querySelector("button");
 const faceImage = document.querySelector("img");
 function init() {
   // TODO
-  populateVoiceList();
   button.addEventListener('click', speak);
 }
 
@@ -40,7 +39,7 @@ function speak(){
     const img = document.querySelector('img');
     img.src = 'assets/images/smiling-open.png';
   });
-  utterThis.addEventListener('end', () => {
+  utterance.addEventListener('end', () => {
     const img = document.querySelector('img');
     img.src = 'assets/images/smiling.png';
   });
