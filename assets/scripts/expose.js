@@ -36,9 +36,10 @@ function updateVolumeIcon(){
 }
 
 function playSound() {
+  const hornSelect = document.getElementById('horn-select');
   const jsConfetti = new JSConfetti();
   const audio = document.querySelector('audio');
-  audio.setAttribute("src", `assets/audio/${document.getElementById('horn-select').value}.mp3`)
+  audio.src="assets/audio/"+hornSelect.value+".mp3";
   if (document.getElementById('horn-select').value == "party-horn"){
     jsConfetti.addConfetti();
   }
