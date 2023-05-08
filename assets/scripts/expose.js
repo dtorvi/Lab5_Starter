@@ -13,13 +13,13 @@ function init() {
 }
 
 function hornType(){
-  const hornSelect = document.getElementById('horn-select');
+  let hornSelect = document.getElementById('horn-select');
   document.querySelector('img').src="assets/images/"+hornSelect.value+".svg";
 }
 
 function updateVolumeIcon(){
-  const volumeIcon = document.querySelector('#volume-controls img');
-  const audio = document.querySelector('audio');
+  let volumeIcon = document.querySelector('#volume-controls img');
+  let audio = document.querySelector('audio');
   audio.volume = volume.value/100;
   if (volume.value == 0){
     volumeIcon.src = 'assets/icons/volume-level-0.svg';
@@ -36,9 +36,9 @@ function updateVolumeIcon(){
 }
 
 function playSound() {
-  const hornSelect = document.getElementById('horn-select');
+  let hornSelect = document.getElementById('horn-select');
   const jsConfetti = new JSConfetti();
-  const audio = document.querySelector('audio');
+  let audio = document.querySelector('audio');
   audio.src="assets/audio/"+hornSelect.value+".mp3";
   if (document.getElementById('horn-select').value == "party-horn"){
     jsConfetti.addConfetti();
