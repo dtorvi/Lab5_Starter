@@ -1,6 +1,6 @@
 // explore.js
 window.addEventListener('DOMContentLoaded', init);
-var textInput = document.querySelector("#text-to-speak");
+var textInput = document.getElementById("text-to-speak");
 var voiceSelect = document.querySelector("#voice-select");
 var button = document.querySelector("button");
 var faceImage = document.querySelector("img");
@@ -33,7 +33,7 @@ function speak(){
   const voices = window.speechSynthesis.getVoices();
   const choice = document.querySelector('#voice-select option:checked');
   const synth = window.speechSynthesis;
-  const utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+  const utterThis = new SpeechSynthesisUtterance(textInput.value);
   for (let i =0; i <voices.length; i++){
     if (voices[i].name == choice){
       utterThis.voice = voices[i];
