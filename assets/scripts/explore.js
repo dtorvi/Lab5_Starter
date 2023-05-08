@@ -1,5 +1,7 @@
 // explore.js
 window.addEventListener('DOMContentLoaded', init);
+window.speechSynthesis.addEventListener('voiceschanged', populateVoiceList);
+
 var textInput = document.getElementById("text-to-speak");
 var voiceSelect = document.querySelector("#voice-select");
 var button = document.querySelector("button");
@@ -8,7 +10,6 @@ function init() {
   // TODO
   speechSynthesis;
   populateVoiceList();
-  window.speechSynthesis.addEventListener('voiceschanged', populateVoiceList);
   button.addEventListener('click', speak);
 }
 
@@ -31,7 +32,7 @@ function populateVoiceList() {
 
 function speak(){
   const voices = window.speechSynthesis.getVoices();
-  const choice = document.querySelector('#voice-select option:checked');
+  var choice = document.querySelector('#voice-select option:checked');
   const synth = window.speechSynthesis;
   const utterThis = new SpeechSynthesisUtterance(textInput.value);
   for (let i =0; i <voices.length; i++){
