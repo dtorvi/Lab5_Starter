@@ -1,9 +1,9 @@
 // explore.js
 window.addEventListener('DOMContentLoaded', init);
-const textInput = document.querySelector("#text-to-speak");
-const voiceSelect = document.querySelector("#voice-select");
-const button = document.querySelector("button");
-const faceImage = document.querySelector("img");
+var textInput = document.querySelector("#text-to-speak");
+var voiceSelect = document.querySelector("#voice-select");
+var button = document.querySelector("button");
+var faceImage = document.querySelector("img");
 function init() {
   // TODO
   populateVoiceList();
@@ -15,7 +15,7 @@ function populateVoiceList() {
   voices = window.speechSynthesis.getVoices();
   console.log(voices.length);
   for (let i =0; i < voices.length; i++){
-    const option = document.createElement("option");
+    var option = document.createElement("option");
     option.textContent = `${voices[i].name} (${voices[i].lang})`;
 
     if (voices[i].default) {
