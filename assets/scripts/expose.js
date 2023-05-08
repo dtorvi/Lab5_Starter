@@ -38,7 +38,7 @@ function updateVolumeIcon(){
 function playSound(event) {
   const jsConfetti = new JSConfetti();
   const audio = document.querySelector('audio');
-  audio.src="assets/images/"+hornSelect.value+".mp3";
+  audio.src="assets/audio/"+hornSelect.value+".mp3";
   if (document.getElementById('horn-select').value == "party-horn"){
     jsConfetti.addConfetti();
   }
