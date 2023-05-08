@@ -35,7 +35,7 @@ function updateVolumeIcon(){
   }
 }
 
-function playSound(event) {
+function playSound() {
   const jsConfetti = new JSConfetti();
   const audio = document.querySelector('audio');
   audio.src="assets/audio/"+hornSelect.value+".mp3";
