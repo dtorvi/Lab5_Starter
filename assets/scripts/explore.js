@@ -1,5 +1,5 @@
 // explore.js
-
+window.addEventListener('DOMContentLoaded', init);
 const textInput = document.querySelector("#text-to-speak");
 const voiceSelect = document.querySelector("#voice-select");
 const button = document.querySelector("button");
@@ -12,6 +12,7 @@ function init() {
 
 function populateVoiceList() {
   voices = window.speechSynthesis.getVoices();
+  console.log(voices.length);
   for (let i =0; i < voices.length; i++){
     const option = document.createElement("option");
     option.textContent = `${voices[i].name} (${voices[i].lang})`;
