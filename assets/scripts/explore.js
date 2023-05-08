@@ -6,10 +6,8 @@ var textInput = document.getElementById("text-to-speak");
 var voiceSelect = document.querySelector("#voice-select");
 var button = document.querySelector("button");
 var faceImage = document.querySelector("img");
-let voices = [];
 function init() {
   // TODO
-  speechSynthesis;
   populateVoiceList();
   button.addEventListener('click', speak);
 }
